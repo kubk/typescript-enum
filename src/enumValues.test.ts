@@ -1,4 +1,4 @@
-import { getEnumValues } from './getEnumValues';
+import { enumValues } from './enumValues';
 import { expect, test } from 'vitest';
 import { assert, IsExact } from 'conditional-type-checks';
 
@@ -8,7 +8,7 @@ test('get enum values - only number', () => {
     Test2,
   }
 
-  const result = getEnumValues(OnlyNumber);
+  const result = enumValues(OnlyNumber);
 
   expect(result).toStrictEqual([0, 1]);
 
@@ -21,7 +21,7 @@ test('get enum values - only string', () => {
     Test2 = 'Test2',
   }
 
-  const result = getEnumValues(OnlyString);
+  const result = enumValues(OnlyString);
   expect(result).toStrictEqual(['Test', 'Test2']);
 
   assert<IsExact<typeof result, OnlyString[]>>(true);
@@ -33,7 +33,7 @@ test('get enum values - only number explicit', () => {
     Test2 = 1,
   }
 
-  const result = getEnumValues(OnlyNumberExplicit);
+  const result = enumValues(OnlyNumberExplicit);
   expect(result).toStrictEqual([0, 1]);
 
   assert<IsExact<typeof result, OnlyNumberExplicit[]>>(true);

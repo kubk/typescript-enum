@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { isValidEnumValue } from './isValidEnumValue';
+import { isEnumValid } from './isEnumValid';
 import { assert, IsExact } from 'conditional-type-checks';
 
 test('is valid enum - only number implicit', () => {
@@ -10,11 +10,11 @@ test('is valid enum - only number implicit', () => {
 
   const param = 0 as unknown;
 
-  expect(isValidEnumValue(param, OnlyNumber)).toBeTruthy();
-  expect(isValidEnumValue(3, OnlyNumber)).toBeFalsy();
-  expect(isValidEnumValue('Test', OnlyNumber)).toBeFalsy();
+  expect(isEnumValid(param, OnlyNumber)).toBeTruthy();
+  expect(isEnumValid(3, OnlyNumber)).toBeFalsy();
+  expect(isEnumValid('Test', OnlyNumber)).toBeFalsy();
 
-  if (isValidEnumValue(param, OnlyNumber)) {
+  if (isEnumValid(param, OnlyNumber)) {
     assert<IsExact<typeof param, OnlyNumber>>(true);
   } else {
     assert<IsExact<typeof param, OnlyNumber>>(false);
@@ -29,11 +29,11 @@ test('is valid enum - only number explicit', () => {
 
   const param = 0 as unknown;
 
-  expect(isValidEnumValue(param, OnlyNumber)).toBeTruthy();
-  expect(isValidEnumValue(3, OnlyNumber)).toBeFalsy();
-  expect(isValidEnumValue('Test', OnlyNumber)).toBeFalsy();
+  expect(isEnumValid(param, OnlyNumber)).toBeTruthy();
+  expect(isEnumValid(3, OnlyNumber)).toBeFalsy();
+  expect(isEnumValid('Test', OnlyNumber)).toBeFalsy();
 
-  if (isValidEnumValue(param, OnlyNumber)) {
+  if (isEnumValid(param, OnlyNumber)) {
     assert<IsExact<typeof param, OnlyNumber>>(true);
   } else {
     assert<IsExact<typeof param, OnlyNumber>>(false);
@@ -48,11 +48,11 @@ test('is valid enum - only string', () => {
 
   const param = 'Test' as unknown;
 
-  expect(isValidEnumValue(param, OnlyString)).toBeTruthy();
-  expect(isValidEnumValue(0, OnlyString)).toBeFalsy();
-  expect(isValidEnumValue('Invalid', OnlyString)).toBeFalsy();
+  expect(isEnumValid(param, OnlyString)).toBeTruthy();
+  expect(isEnumValid(0, OnlyString)).toBeFalsy();
+  expect(isEnumValid('Invalid', OnlyString)).toBeFalsy();
 
-  if (isValidEnumValue(param, OnlyString)) {
+  if (isEnumValid(param, OnlyString)) {
     assert<IsExact<typeof param, OnlyString>>(true);
   } else {
     assert<IsExact<typeof param, OnlyString>>(false);

@@ -1,2 +1,2 @@
-export { isValidEnumValue } from './isValidEnumValue';
-export { getEnumValues } from './getEnumValues';
+export { isEnumValid } from './isEnumValid';
+export { enumValues } from './enumValues';

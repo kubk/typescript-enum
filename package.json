@@ -1,12 +1,13 @@
 {
   "name": "typescript-enum",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "TypeScript enum missed helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json --outDir ./dist",
-    "test": "npx vitest"
+    "test": "npx vitest",
+    "prepublish": "npm run build"
   },
   "files": [
     "dist"
