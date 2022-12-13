@@ -1,0 +1,22 @@
+{
+  "name": "typescript-enum",
+  "version": "1.0.0",
+  "description": "TypeScript enum missed helpers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc -p tsconfig.build.json --outDir ./dist",
+    "test": "npx vitest"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Egor Gorbaachev <7gorbachevm@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "conditional-type-checks": "^1.0.6",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4",
+    "vitest": "^0.25.7"
+  }
+}
