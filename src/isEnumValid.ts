@@ -5,5 +5,6 @@ export function isEnumValid<T extends EnumLike>(
   param: unknown,
   enumObject: T
 ): param is T[keyof T] {
-  return enumValues(enumObject).includes(param as any);
+  // @ts-ignore
+  return enumValues(enumObject).includes(param);
 }
