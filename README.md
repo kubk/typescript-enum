@@ -85,7 +85,7 @@ function processPackage(packageType: PackageType) {
 processPackage(packageInput.type as any)
 ```
 
-✅ The following component doesn't need to be updated whenever new member is added to enum
+✅ The following code validates unknown value both runtime and compile type
 
 ```tsx
 import { isEnumValid } from './isEnumValid'
