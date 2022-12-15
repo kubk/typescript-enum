@@ -44,7 +44,7 @@ if (isEnumValid(maybeColor)) {
 
 ❌ The following component should be updated whenever new member is added to enum
 ```tsx 
-enum Permission { Read = 'r', Write = 'w', Edit = 'e' }
+enum Permission { Read = 0, Write = 1, Edit = 2 }
 
 const Component = () => {
   return <List>
@@ -55,11 +55,24 @@ const Component = () => {
 }
 ```
 
-✅ The following component doesn't need to be updated whenever new member is added to enum
+❌ The following works only for string enums but won't work for numeric enums, because the enum gets transpiled to `{"0": "Read", "1": "Write", "2": "Edit", "Read": 0, "Write": 1, "Edit": 2 }`
+```tsx 
+enum Permission { Read = 0, Write = 1, Edit = 2 }
+
+const Component = () => {
+  return <List>
+    {(Object.entries(Permission)).map(permission => {
+      // The enum values are duplicated :(
+    })}
+  </List>  
+}
+```
+
+✅ The following component doesn't need to be updated whenever new member is added to enum. Also it works with both string and numeric enums.
 ```tsx 
 import { enumValues } from 'typescript-enum'
 
-enum Permission { Read = 'r', Write = 'w', Edit = 'e' }
+enum Permission { Read = 0, Write = 1, Edit = 2 }
 
 const Component = () => {
   return <List>
