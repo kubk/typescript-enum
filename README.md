@@ -61,7 +61,7 @@ enum Permission { Read = 0, Write = 1, Edit = 2 }
 
 const Component = () => {
   return <List>
-    {(Object.entries(Permission)).map(permission => {
+    {Object.entries(Permission).map(permission => {
       // The enum values are duplicated :(
     })}
   </List>  
