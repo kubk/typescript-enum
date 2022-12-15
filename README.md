@@ -85,7 +85,7 @@ const Component = () => {
 
 #### 2. You want to make sure that unknown value is member of enum 
 
-❌ The following code requires hacky ways to check whether value is member of enum
+❌ The following code requires unsafe type cast
 ```tsx
 enum PackageType { Basic, Advanced, Premium }
 
