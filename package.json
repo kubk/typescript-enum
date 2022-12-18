@@ -1,13 +1,14 @@
 {
   "name": "typescript-enum",
-  "version": "1.3.0",
+  "version": "1.4.1",
   "description": "TypeScript enum missed helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json --outDir ./dist",
     "test": "npx vitest",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "prepare": "husky install"
   },
   "files": [
     "dist"
@@ -16,7 +17,9 @@
   "license": "MIT",
   "devDependencies": {
     "conditional-type-checks": "^1.0.6",
+    "husky": "^8.0.0",
     "prettier": "^2.8.1",
+    "pretty-quick": "^3.1.3",
     "typescript": "^4.9.4",
     "vitest": "^0.25.7"
   }
