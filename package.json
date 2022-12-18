@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json --outDir ./dist",
     "test": "npx vitest",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "prepare": "husky install"
   },
   "files": [
