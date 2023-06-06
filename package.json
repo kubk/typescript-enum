@@ -1,11 +1,17 @@
 {
   "name": "typescript-enum",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "TypeScript enum missed helpers",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/typescript-enum.cjs",
+    "default": "./dist/typescript-enum.modern.js"
+  },
+  "main": "./dist/typescript-enum.cjs",
+  "module": "./dist/typescript-enum.module.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc -p tsconfig.build.json --outDir ./dist",
+    "build": "microbundle",
     "test": "npx vitest",
     "prepublishOnly": "npm run build",
     "prepare": "husky install"
@@ -18,7 +24,8 @@
   "devDependencies": {
     "conditional-type-checks": "^1.0.6",
     "husky": "^8.0.0",
-    "prettier": "^2.8.1",
+    "microbundle": "^0.15.1",
+    "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3",
     "typescript": "^4.9.4",
     "vitest": "^0.25.7"
