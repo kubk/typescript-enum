@@ -1,9 +1,10 @@
 {
   "name": "typescript-enum",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "TypeScript enum missed helpers",
   "type": "module",
   "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "exports": {
     "require": "./dist/typescript-enum.cjs",
     "default": "./dist/typescript-enum.modern.js"
