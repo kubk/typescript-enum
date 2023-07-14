@@ -1,3 +1,3 @@
 export { isEnumValid } from "./isEnumValid";
 export { enumValues } from "./enumValues";
-import { EnumLike } from "./types";
+export { type EnumLike } from "./types";

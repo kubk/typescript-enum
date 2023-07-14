@@ -1,6 +1,6 @@
 {
   "name": "typescript-enum",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "TypeScript enum missed helpers",
   "type": "module",
   "source": "src/index.ts",
